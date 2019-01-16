@@ -10,3 +10,4 @@ export = (app: Application) => {
       repo: context.payload.pull_request.repo.id
     })
   })
+}
