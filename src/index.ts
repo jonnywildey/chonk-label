@@ -1,13 +1,12 @@
-import { Application } from 'probot' // eslint-disable-line no-unused-vars
+import { Application, Context } from 'probot' // eslint-disable-line no-unused-vars
 
 export = (app: Application) => {
-  app.on('issues.opened', async (context) => {
-    const issueComment = context.issue({ body: 'Thanks for opening this issue!' })
-    await context.github.issues.createComment(issueComment)
+  app.on(['pull_request.opened', 'pull_request.synchonize'], async (context) => {
+    await context.github.issues.createLabel({
+      color: "008330",
+      description: "CHONK",
+      name: "A Fine Boi",
+      owner: "Chonk",
+      repo: context.payload.pull_request.repo.id
+    })
   })
-  // For more information on building apps:
-  // https://probot.github.io/docs/
-
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
-}
