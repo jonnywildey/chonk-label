@@ -14,8 +14,8 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "nodemon --exec \"npm start\"",
-    "start": "probot run ./lib/index.js",
+    "dev": "nodemon --watch ./src/**.*.ts --exec \"npm start\"",
+    "start": "npm run build && probot run ./lib/index.js",
     "lint": "standard **/*.ts --fix",
     "test": "jest && standard **/*.ts",
     "simulate-synchronize": "node_modules/.bin/probot receive -e pull_request -p test/fixtures/pull_request.synchronize.json ./lib/index.js",
