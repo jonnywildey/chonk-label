@@ -1,4 +1,4 @@
-{
+export default {
   "action": "opened",
   "number": 1,
   "pull_request": {
