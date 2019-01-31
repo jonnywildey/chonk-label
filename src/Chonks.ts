@@ -16,7 +16,7 @@ export const Chonks: IChonk[] = [
     fileLimit: 20
   },
   {
-    name: "A Hecklin' Chonker",
+    name: "A Heckin' Chonker",
     color: "fea000",
     fileLimit: 40
   },
