@@ -12,8 +12,8 @@ describe("Chonks", () => {
   it("gets They Chomnk", () => {
     expect(getChonk(15).name).toEqual("They Chomnk");
   })
-  it("gets A Hecklin' Chonker", () => {
-    expect(getChonk(25).name).toEqual("A Hecklin' Chonker");
+  it("gets A Heckin' Chonker", () => {
+    expect(getChonk(25).name).toEqual("A Heckin' Chonker");
   })
   it("gets HEFTYCHONK", () => {
     expect(getChonk(55).name).toEqual("HEFTYCHONK");

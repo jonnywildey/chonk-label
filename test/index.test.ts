@@ -16,7 +16,7 @@ describe('My Probot app', () => {
   let probot: any
 
   beforeEach(() => {
-    probot = new Probot({ id: 123, cert: 'test' })
+    probot = new Probot({ appId: "123", secret: "123"  })
     // Load our app into probot
     const app = probot.load(myProbotApp)
 
