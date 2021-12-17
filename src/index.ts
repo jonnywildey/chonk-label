@@ -8,7 +8,7 @@ export = (app: Probot) => {
   app.log("Waiting for CHONK");
   app.on(
     ["pull_request.opened", "pull_request.synchronize"],
-    async (context: Context) => {
+    async (context: Context<"pull_request.opened" | "pull_request.synchronize">) => {
       const filesChanged = context.payload.pull_request.changed_files;
       const selectedChonk = getChonk(filesChanged);
 
