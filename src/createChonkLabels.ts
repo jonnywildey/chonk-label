@@ -1,7 +1,7 @@
 import { Context } from 'probot';
 import { Chonks } from "./Chonks";
 
-export const createChonkLabels = async (context: Context) => {
+export const createChonkLabels = async (context: Context<"pull_request.opened" | "pull_request.synchronize">) => {
   const labels = await context.octokit.issues.listLabelsForRepo(context.issue({}));
   await Promise.all(Chonks.map(async c => {
     if (labels.data.find(d => d.name === c.name)) {
